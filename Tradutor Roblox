@@ -279,7 +279,7 @@ wait()
 local properties = {
     Color = Color3.new(0,1,1);
     Font = Enum.Font.SourceSansItalic;
-    TextSize = 20;
+    TextSize = 16;
 }
 
 game:GetService("StarterGui"):SetCore("SendNotification",
