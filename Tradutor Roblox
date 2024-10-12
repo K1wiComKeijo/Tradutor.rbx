@@ -87,7 +87,7 @@ local translate, getISOCode do
         fy = "Frisian",
         gl = "Galician",
         ka = "Georgian",
-        al = "German",
+        de = "German",
         el = "Greek",
         gu = "Gujarati",
         ht = "Haitian Creole",
@@ -104,7 +104,7 @@ local translate, getISOCode do
         it = "Italian",
         ja = "Japanese",
         jw = "Javanese",
-        ca = "Kannada",
+        kn = "Kannada",
         kk = "Kazakh",
         km = "Khmer",
         ko = "Korean",
@@ -279,7 +279,7 @@ wait()
 local properties = {
     Color = Color3.new(0,1,1);
     Font = Enum.Font.SourceSansItalic;
-    TextSize = 19;
+    TextSize = 20;
 }
 
 game:GetService("StarterGui"):SetCore("SendNotification",
@@ -290,7 +290,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",
     }
 )
                   
-properties.Text = "[TR] kK1wie - Para usar para voce falar em outras línguas use ">" exemplo >en para falar inglês, e para desativar use >d"
+properties.Text = "[TR] To send messages in a language, say > followed by the target language/language code, e.g.: >ru or >russian. To disable (go back to original language), say >d."
 StarterGui:SetCore("ChatMakeSystemMessage", properties)
 
 function translateFrom(message)
@@ -382,7 +382,7 @@ end
 
 function disableSend()
     sendEnabled = false
-    properties.Text = "[TR] Conversão de palavras desativado"
+    properties.Text = "[TR] Sending Disabled"
     StarterGui:SetCore("ChatMakeSystemMessage", properties)
 end
 
@@ -402,7 +402,7 @@ local HookChat = function(Bar)
                             sendEnabled = true
                             target = Message:sub(2)
                         else
-                            properties.Text = "[TR] não encontrado"
+                            properties.Text = "[TR] Invalid language"
                             StarterGui:SetCore("ChatMakeSystemMessage", properties)
                         end
                     elseif sendEnabled and not (Message:sub(1,3) == "/e " or Message:sub(1,7) == "/emote ") then
