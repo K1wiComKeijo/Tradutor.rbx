@@ -286,7 +286,7 @@ game:GetService("StarterGui"):SetCore("SendNotification",
     {
         Title = "Chat Translator",
         Text = "Ported to Google Translate",
-        Duration = 2
+        Duration = 3
     }
 )
                   
